@@ -29,4 +29,25 @@ export const mockData: Incident[] = [
     severity: "Low",
     reported_at: "2025-03-20T09:15:00Z",
   },
+  {
+    id: 4,
+    title: "Minor Data Leak via Chatbot",
+    description: "Chatbot inadvertently exposed non-sensitive user metadata...",
+    severity: "Medium",
+    reported_at: "2025-03-20T09:15:00Z",
+  },
+  {
+    id: 5,
+    title: "Minor Data Leak via Chatbot",
+    description: "Chatbot inadvertently exposed non-sensitive user metadata...",
+    severity: "High",
+    reported_at: "2025-03-20T09:15:00Z",
+  },
+  {
+    id: 6,
+    title: "Minor Data Leak via Chatbot",
+    description: "Chatbot inadvertently exposed non-sensitive user metadata...",
+    severity: "Low",
+    reported_at: "2025-03-20T09:15:00Z",
+  },
 ];

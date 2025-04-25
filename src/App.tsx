@@ -9,7 +9,7 @@ import { Incident, mockData } from './utils/mockData';
 
 const severityColor = {
   Low: "green",
-  Medium: "yellow",
+  Medium: "gold",
   High: "red"
 }
 
@@ -69,26 +69,25 @@ function App() {
   }
 
   return (
-    <>
     <div className='dashboard'>
       <div className="header">
         <h1>AI Safety Incident Dashboard</h1>
       </div>
       <div className="controls">
-        <div className="sortControls">
-          <select name="" id="" value={severityFilter} onChange={(e) => setSeverityFilter(e.target.value)}>
+        <div className="sort-controls">
+          <select value={severityFilter} onChange={(e) => setSeverityFilter(e.target.value)}>
             <option>All</option>
             <option>High</option>
             <option>Medium</option>
             <option>Low</option>
           </select>
           <select name="" id="" value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
-            <option>Newest</option>
-            <option>Oldest</option>
+            <option>Newest First</option>
+            <option>Oldest First</option>
           </select>
         </div>
 
-        <button className="btn report-btn" onClick={handleReportIncident}>
+        <button className="report-btn" onClick={handleReportIncident}>
           Report Incident
         </button>
       </div>
@@ -97,7 +96,7 @@ function App() {
         {sortedIncidents.map((data) => {
           return (
             <div key={data.id}>
-              <IncidentCard data={data} viewDetailsId={(id: number) => handleDetailsIdList(id)} viewDetails={viewDetailsId} severityColor={severityColor[data.severity]} />
+              <IncidentCard data={data} viewDetailsId={(id: number) => handleDetailsIdList(id)} viewDetailsList={viewDetailsId} severityColor={severityColor[data.severity]} />
             </div>
           )
         })}
@@ -105,12 +104,12 @@ function App() {
 
 
 
+      {isReporting &&
+        (<section className='report-section'>
+          <ReportForm updateIncident={({ title, description, severity }) => updateIncident({ title, description, severity })} isReporting={() => setIsReporting(false)}/>
+        </section>)}
     </div>
-      {isReporting && 
-      (<section className='report-section'>
-        <ReportForm updateIncident={({ title, description, severity }) => updateIncident({ title, description, severity })} />
-      </section>)}
-    </>
+
   )
 }
 
