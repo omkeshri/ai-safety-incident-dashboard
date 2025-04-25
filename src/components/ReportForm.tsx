@@ -22,12 +22,13 @@ const ReportForm = ({ updateIncident, isReporting }: Props) => {
             if (title.length === 0 || description.length === 0) {
                 throw new Error("Please fill out the empty fields!")
             }
-            if (severity === "") throw new Error("Please choose the severity of the incident!")
+            else if(description.length<10) throw new Error("Description must include atleast 10 letters!")
+            else if (severity === "") throw new Error("Please choose the severity of the incident!")
+
             setError("Incident Submitted!")
             updateIncident({ title, description, severity });
             setTimeout(() => {
                 isReporting();
-
             }, 1000);
         }
         catch (err: any) {

@@ -35,6 +35,7 @@ body.modal-open {
 }
 
 .sort-controls select{
+  display: inline-block;
   width: 170px;
   padding: 0.3rem 0.5rem;
   font-weight: 600;
@@ -86,10 +87,7 @@ body.modal-open {
   border-radius: 5px;
   background-color: #fff;
   margin-bottom: 1rem;
-  overflow: hidden;
   color: black;
-  height: 100%;
-  min-height: 200px;
   box-shadow: 0px 12px 40px rgba(218, 218, 218, 0.2);
 }
 
@@ -122,13 +120,18 @@ body.modal-open {
 
 .incident-content h2 {
   margin-bottom: 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);;
 }
 
 .incident-content p {
   font-weight: 600;
   font-size: 0.9rem;
+  font-size: clamp(0.7rem, 2.5vw, 0.9rem);;
 }
-
+.span-text{
+  
+  color: rgb(73, 73, 73);
+}
 .incident-description {
   margin-bottom: 1rem;
 }
@@ -148,7 +151,7 @@ body.modal-open {
 }
 
 .report-section {
-  width: 100%;
+  width: 95%;
   max-width: 1200px;
   position: absolute;
   color: black;
@@ -244,6 +247,16 @@ body.modal-open {
   background: green;
 }
 
+
+
+
+
+@media screen and (max-width: 768px) {
+  .report-form{
+    padding: 4rem 5rem;
+  }
+}
+
 @media  screen and (max-width:560px) {
   .report-btn{
     margin-top: 1rem;
@@ -253,5 +266,16 @@ body.modal-open {
 @media  screen and (max-width:475px) {
   .details-btn{
     margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .sort-controls select{
+    width: 150px;
+    margin-bottom: 0.3rem;
+  }
+
+  .report-form{
+    padding: 4rem 1rem;
   }
 }
