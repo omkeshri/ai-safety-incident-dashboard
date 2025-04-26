@@ -46,3 +46,7 @@ This is a simple, responsive AI Safety Incident Dashboard built using React, Typ
     ```bash
     npm run dev
     ```
+
+5. ```bash
+   Go to http://localhost:5173/ to view the local development server running the project.
+   ```
