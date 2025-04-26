@@ -18,7 +18,7 @@ export const mockData: Incident[] = [
     id: 2,
     title: "LLM Hallucination in Critical Info",
     description:
-      "LLM provided incorrect safety procedure information...LLM provided incorrect safety procedure information...LLM provided incorrect safety procedure information...LLM provided incorrect safety procedure information...",
+      "LLM provided incorrect safety procedure information",
     severity: "High",
     reported_at: "2025-04-01T14:30:00Z",
   },
