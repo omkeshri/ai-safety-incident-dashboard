@@ -1,54 +1,48 @@
-# React + TypeScript + Vite
+# AI Safety Incident Dashboard
+This is a simple, responsive AI Safety Incident Dashboard built using React, TypeScript, CSS, and Vite. It allows users to view, filter, sort, and report new AI safety incidents with clean styling and basic input validation.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- __Display a List of Incidents__: Shows each incident's Title, Severity (Low, Medium, High), and Reported Date.
 
-Currently, two official plugins are available:
+- __Filter by Severity__: Filters incidents based on severity ("All", "Low", "Medium", "High").
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- __Sort by Date__: Sorts incidents by Newest First or Oldest First.
 
-## Expanding the ESLint configuration
+- __View Details Toggle__: Shows/hides the full incident description when clicked.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- __Report New Incident Form__: Adds new incidents with a form that takes a title, description, and severity.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- __Basic Input Validation__: Ensures the title and description are not empty before submitting.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- __Responsive Layout__: Utilizes Flexbox or Grid for responsiveness and includes hover effects for better UX.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Technologies Used
+- __React (Vite)__: For building the UI and managing components.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- __TypeScript__: For type safety and better code quality.
+
+- __CSS__: For creating a responsive, user friendly, and flexible layout.
+
+- __React Hooks__: For managing state and side effects in functional components.
+
+## Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/omkeshri/ai-safety-incident-dashboard.git
+    ```
+
+2. Navigate to the project directory:
+    ```bash
+    cd ai-safety-incident-dashboard
+    ```
+
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
+
+4. Start the development server:
+    ```bash
+    npm run dev
+    ```
