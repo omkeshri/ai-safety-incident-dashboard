@@ -47,16 +47,20 @@ function App() {
     description: string;
     severity: "Low" | "Medium" | "High";
   }) => {
+
+    const now = new Date();
+    const reportedAtIST = now.toISOString().split('.')[0] + 'Z';
     const lastId = incidents[incidents.length - 1].id;
+
     const newIncident = {
       id: lastId + 1,
       title: title,
       description: description,
       severity: severity,
-      reported_at: new Date().toISOString().split('.')[0] + 'Z',
+      reported_at: reportedAtIST,
     }
-    const updatedIncident = [...incidents, newIncident];
-    setIncidents(updatedIncident);
+    const updatedIncidents = [...incidents, newIncident];
+    setIncidents(updatedIncidents);
   }
 
 
@@ -78,8 +82,8 @@ function App() {
             <option>Low</option>
           </select>
           <select name="" id="" value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
-            <option>Newest First</option>
-            <option>Oldest First</option>
+            <option value={"Newest"}>Newest First</option>
+            <option value={"Oldest"}>Oldest First</option>
           </select>
         </div>
 
@@ -102,7 +106,7 @@ function App() {
 
       {isReporting &&
         (<section className='report-section'>
-          <ReportForm updateIncident={({ title, description, severity }) => updateIncident({ title, description, severity })} isReporting={() => setIsReporting(false)}/>
+          <ReportForm updateIncident={({ title, description, severity }) => updateIncident({ title, description, severity })} isReporting={() => setIsReporting(false)} />
         </section>)}
     </div>
 
