@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { Incident } from '../utils/mockData';
+import { useEffect, useState } from 'react'
 
 interface Props {
     updateIncident: (data: {

@@ -4,15 +4,11 @@ import { IncidentCard } from './components/IncidentCard';
 import ReportForm from './components/ReportForm';
 import { Incident, mockData } from './utils/mockData';
 
-
-
-
 const severityColor = {
   Low: "green",
   Medium: "gold",
   High: "red"
 }
-
 
 function App() {
   const [incidents, setIncidents] = useState<Incident[]>(mockData);

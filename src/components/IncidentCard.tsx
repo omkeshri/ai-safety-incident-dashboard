@@ -1,5 +1,3 @@
-import React, { useDebugValue, useEffect } from 'react';
-
 interface IncidentCardProps {
     data: {
         id: number;
