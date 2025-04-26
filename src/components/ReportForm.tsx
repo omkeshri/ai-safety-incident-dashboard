@@ -5,7 +5,7 @@ interface Props {
     updateIncident: (data: {
         title: string;
         description: string;
-        severity: string;
+        severity: "Low" | "Medium" | "High";
     }) => void;
     isReporting: () => void;
 }
@@ -13,7 +13,7 @@ interface Props {
 const ReportForm = ({ updateIncident, isReporting }: Props) => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [severity, setSeverity] = useState("");
+    const [severity, setSeverity] = useState<"Low" | "Medium" | "High" | "">("");
     const [error, setError] = useState("Please verify the details before submitting an incident!")
 
     const handleIncidentSubmit = (e: any) => {
@@ -64,7 +64,7 @@ const ReportForm = ({ updateIncident, isReporting }: Props) => {
             </label>
             <label>
                 Severity:
-                <select value={severity} onChange={(e) => setSeverity(e.target.value)}>
+                <select value={severity} onChange={(e) => setSeverity(e.target.value as "Low" | "Medium" | "High" | "")}>
                     <option value="">None</option>
                     <option value="High">High</option>
                     <option value="Medium">Medium</option>

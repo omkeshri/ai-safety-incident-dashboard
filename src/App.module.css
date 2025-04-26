@@ -11,75 +11,52 @@ body.modal-open {
 }
 
 .dashboard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 0;
-  position: relative;
-  background: rgb(15 23 42);
-  height: 100%;
-  min-height: 100vh;
-  color: white;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.header{
-  text-align: center;
+
+.header {
+  margin-bottom: 20px;
 }
 
 .controls {
-  width: 90%;
-  max-width: 1000px;
   display: flex;
   justify-content: space-between;
-  padding: 2rem 0.5rem;
-  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.sort-controls select{
-  display: inline-block;
-  width: 170px;
-  padding: 0.3rem 0.5rem;
-  font-weight: 600;
-  background: rgb(204, 237, 249);
-  margin-right: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.sort-controls option{
-  font-weight: 600;
-}
-
-.sort-controls select:focus{
-  outline: none;
-}
-
-.sort-controls select:hover{
-  background: rgb(154, 222, 247);
+.sort-controls {
+  display: flex;
+  gap: 10px;
 }
 
 .report-btn {
-  height: 1rem;
-  border: none;
-  background-color: #ff6f6f;
-  padding: 1rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 8px 16px;
+  background-color: #007bff;
   color: white;
-  border-radius: 5px;
-  font-size: 0.7rem;
-  font-weight: 600;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.report-btn:hover {
-  background: #ff4d4d;
-  text-decoration: none;
+.incident-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.incident-list {
-  width: 90%;
-  max-width: 1000px;
+.report-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .incident-card {
@@ -90,7 +67,6 @@ body.modal-open {
   color: black;
   box-shadow: 0px 12px 40px rgba(218, 218, 218, 0.2);
 }
-
 
 .incident-card:hover{
   background-color: rgb(223, 235, 245);
@@ -148,15 +124,6 @@ body.modal-open {
 
 .details-btn:hover {
   color: rgb(27, 74, 155);
-}
-
-.report-section {
-  width: 95%;
-  max-width: 1200px;
-  position: absolute;
-  color: black;
-  transition: 2s;
-  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 .report-form {
@@ -248,10 +215,6 @@ body.modal-open {
 .submit-btn:hover {
   background: green;
 }
-
-
-
-
 
 @media screen and (max-width: 768px) {
   .report-form{

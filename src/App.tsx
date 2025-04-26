@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import "./App.css"
 import { IncidentCard } from './components/IncidentCard';
 import ReportForm from './components/ReportForm';
 import { Incident, mockData } from './utils/mockData';
